@@ -1,0 +1,1 @@
+MATCH (source:town {name: "Darjeeling"}), (target:peak {name: "Sandakphu"}) MATCH p = allShortestPaths((source)-[*]->(target)) RETURN p

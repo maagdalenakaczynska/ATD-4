@@ -1,0 +1,4 @@
+MATCH (source:town {name: "Darjeeling"}), (target:peak {name: "Sandakphu"}), p = allShortestPaths((source)-[*]->(target))
+WITH p, relationships(p) as rel
+WHERE ALL (r in rel WHERE r.winter = "true")
+RETURN p, rel
